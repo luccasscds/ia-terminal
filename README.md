@@ -2,6 +2,9 @@
 
 CLI para automação de tarefas com IA, como geração de mensagens de commit utilizando inteligência artificial.
 
+## Demostração do comando "ia commit"
+<img src="./.vscode/git-commit.png" alt="saída do comando ia commit"/>
+
 # Sumário:
 1. [Instalação](#instalação)
    - Clone o repositório
