@@ -28,7 +28,7 @@ cd ia-terminal
 
 2. Instale as dependências:
 ```bash
-npm install
+npm ci
 ```
 
 3. Compile o projeto e Adicione o CLI ao seu sistema:
