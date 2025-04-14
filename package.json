@@ -1,0 +1,30 @@
+{
+  "name": "ia-terminal",
+  "description": "CLI para automação de tarefas com IA, como geração de mensagens de commit utilizando inteligência artificial.",
+  "version": "1.0.0",
+  "main": "main.ts",
+  "author": {
+    "name": "Lucas Silva",
+    "url": "https://github.com/luccasscds"
+  },
+  "scripts": {
+    "start": "ts-node .",
+    "build": "tsup main.ts src/",
+    "preview": "cd dist/ && node main.js"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bin": {
+    "ia": "./dist/main.js"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "commander": "10.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "ts-node": "^10.9.2",
+    "tsup": "5.12.9",
+    "typescript": "^5.8.3"
+  }
+}
