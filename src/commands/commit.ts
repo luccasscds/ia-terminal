@@ -32,11 +32,11 @@ export async function commit() {
         const resultIA = await ia.generateContent({
             system_instruction: `
                 Você é um assistente de IA que ajuda a gerar mensagens de commit do git.
-                Somente gere mensagens de commit do git, e não faça mais nada.
+                Somente gere mensagens, em português, de commit do git, e não faça mais nada.
             `,
             contents: result as string,
         });
-        tools.message.success(resultIA);
+        tools.message.success("🤖: "+resultIA);
     } catch (error) {
         tools.message.error('Erro: '+ error);
     }

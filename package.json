@@ -17,6 +17,10 @@
   "bin": {
     "ia": "./dist/main.js"
   },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "engineStrict": true,
   "dependencies": {
     "axios": "^1.8.4",
     "commander": "10.0.1"
