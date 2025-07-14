@@ -2,19 +2,20 @@ import { exec } from "child_process";
 import { ia } from "../ia";
 import { tools } from "../tools/tools";
 
-export async function commit() {
+export async function commit(command = 'git diff') {
     try {
-        tools.message.info('Executando "git diff"...\n');
+        if (!command) throw 'Comando não especificado. Use "git diff" ou "git diff --cached".';
+        tools.message.info(`Executando "${command}"...\n`);
     
         const result = await new Promise((resolve, reject) => {
             // Executa o comando "git diff" e resolve a promise com o resultado
-            exec('git diff', (error, stdout, stderr) => {
+            exec(command, (error, stdout, stderr) => {
                 if (stdout.length > 0) {
-                    if (error) tools.message.error('Erro ao executar "git diff": '+ error.message);
+                    if (error) tools.message.error(`Erro ao executar "${command}": `+ error.message);
                     if (stderr) tools.message.error('Erro no Git: '+ stderr);
                     resolve(stdout);
                 } else if (error) {
-                    tools.message.error('Erro ao executar "git diff": '+ error.message);
+                    tools.message.error(`Erro ao executar "${command}": `+ error.message);
                     reject(error);
                 } else if (stderr) {
                     tools.message.error('Erro no Git: '+ stderr);

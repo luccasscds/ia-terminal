@@ -8,7 +8,15 @@ const program = new Command();
 program
   .command('commit')
   .description('Gera uma mensagem de commit a partir das alterações do Git usando IA')
-  .action(commit);
+  .option('-c, --cached', 'Usa as alterações em staging para gerar a mensagem de commit')
+  .action(async (options) => {
+    console.log('options:', options);
+    if (options.cached) {
+      await commit('git diff --cached');
+    } else {
+      await commit('git diff');
+    };
+  });
 
 program
   .command('set-key')
